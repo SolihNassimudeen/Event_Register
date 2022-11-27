@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand-lg bg-light" [ngClass]="addEventClick">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="homepage"
+            style="font-family: 'Updock', cursive;padding-left: 120px; font-size: 2rem;"><strong>Capture
+                Crew</strong></a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <button class="btn btn-dark" style="margin-left: 500px; width: 150px;"
+                        (click)="home()">Home</button>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-outline-dark" style="margin-left: 40px; width: 150px;" (click)="events()">Events</button>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-outline-dark" style="margin-left: 40px; width: 150px;" (click)="history()">History</button>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-outline-danger" style="margin-left: 40px; width: 150px;"(click)="logOut()">Log out</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div><app-addevent [item]="ucode" (onCancel)="cancelEvent()"></app-addevent></div>
+
+<div class="row" [ngClass]="addEventClick" >
+    <div class="col-6" style="padding-top: 90px;padding-left:50px; padding-right: 50px;" >
+        <img src="https://c0.wallpaperflare.com/preview/544/400/1016/camera-photo-camera-sony-mirrorless.jpg"
+            class="w-100" alt="">
+    </div>
+
+    <div class="col-6">
+        <div style="text-align: center;">
+            <h1 style="margin-top: 50px;font-family: 'Dancing Script', cursive;font-size: 4rem;"><strong>Welcome to
+                    Capture Crew</strong></h1>
+            <p style="font-size: 1.5rem;font-family: 'Dancing Script', cursive;">"We are here to capture the best
+                moments in your life"</p>
+            <hr>
+        </div>
+        <div style="text-align: center;">
+            <div class="event-add-div">
+                <button class="p-5 btn btn-outline-secondary" style="font-size: 2rem;" (click)="addEvent()">+</button>
+            </div>
+
+            <label style="font-size: 1.5rem;font-family: 'Times New Roman', Times, serif;margin-top: 10px;"><strong>Add your events</strong></label>
+        </div>
+    </div>
+  
+</div>

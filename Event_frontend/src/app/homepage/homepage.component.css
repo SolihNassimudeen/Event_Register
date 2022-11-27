@@ -1,0 +1,14 @@
+.row{
+    --bs-gutter-x: 0rem;
+}
+
+.event-add-div{
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+.opacity-body-div{
+    opacity: 0.1;
+    pointer-events: none;
+}

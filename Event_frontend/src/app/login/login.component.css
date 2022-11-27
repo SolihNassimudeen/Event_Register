@@ -1,0 +1,45 @@
+
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+.h-custom {
+height: calc(100% - 73px);
+}
+@media (max-width: 450px) {
+.h-custom {
+height: 100%;
+}
+}
+
+.login-div-rightBox{
+    border: 1px solid #efdada;
+    border-radius: 20%;
+}
+
+.logo_heading{
+    font-family: 'Updock', cursive;
+    font-weight: 500;
+    font-size: 5rem;
+}
+.logo_body{
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    font-weight: 500;
+}
+.login-left-text{
+    margin-left: 130px;
+    margin-top: 60px;
+}
+
+label{
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+}
+.donthAccnt{
+    text-align: center;
+}
+

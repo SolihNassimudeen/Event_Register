@@ -1,0 +1,81 @@
+<div class="main-div" style="background-image: url(../../assets/eventbg2.jpg);">
+
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="homepage"
+                style="font-family: 'Updock', cursive;padding-left: 120px; font-size: 2rem;"><strong>Capture
+                    Crew</strong></a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <button class="btn btn-outline-dark" style="margin-left: 500px; width: 180px;"
+                            (click)="home()">Home</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-dark" style="margin-left: 40px; width: 180px;"
+                            (click)="events()">Events</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-outline-dark" style="margin-left: 40px; width: 180px;"
+                            (click)="history()">History</button>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+<!-- delete popup -->
+    <div id="popup-delete-maindiv" *ngIf="id">
+        <div>
+            <h4 class="m-3">Do you really want to delete this event?</h4>
+        </div>
+        <div>
+            <label>Event Name</label>
+            <input type="text" class="form-control inputwidth" disabled placeholder="{{delete_event_name}}">
+        </div>
+        <div>
+            <label for="">Event Date</label>
+            <input type="text" class="form-control inputwidth" disabled placeholder="{{delete_event_date| date:'shortDate'}}">
+        </div>
+        <div>
+            <label for="">User Code</label>
+            <input type="text" class="form-control inputwidth" disabled placeholder="{{ucode}}">
+        </div>
+
+        <div>
+            <button class="btn btn-outline-danger  m-4" data-dismiss="modal"
+                style="font-size: 1.5rem;" (click)="addHistory(this.id);deleteRow(this.id)">Delete</button>
+                <button class="btn btn-outline-success  m-4" data-dismiss="modal"
+                style="font-size: 1.5rem;" (click)="cancel()">Cancel</button>
+        </div>
+    </div>
+<!-- table -->
+    <div class="row m-5">
+        <div class="col-1"></div>
+        <div class="col-10">
+            <table class="table table-dark">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">User Code</th>
+                        <th scope="col">Event Name</th>
+                        <th scope="col">Event Date</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let data of eventArray">
+                        <td>{{data.User_Code}}</td>
+                        <td>{{data.Event_Name}}</td>
+                        <td>{{data.Event_Date|date:'shortDate'}}</td>
+                        <td><button class="btn btn-outline-secondary "
+                               (click)="delete(data._id)"
+                                >Delete</button></td>
+                               
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-1"></div>
+    </div>
+
+</div>
