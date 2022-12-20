@@ -52,7 +52,7 @@ export class EventsComponent {
   addHistory(id: any) {
     this.service.history(id)
       .subscribe((result: any) => {
-
+        this.deleteRow(id)
       })
   }
 

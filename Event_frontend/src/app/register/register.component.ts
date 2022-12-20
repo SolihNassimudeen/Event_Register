@@ -15,7 +15,7 @@ export class RegisterComponent {
   registerArray=this.validation.group({
     fname:['',[Validators.required,Validators.pattern('[a-zA-Z]*')]],
     sname:['',[Validators.required,Validators.pattern('[a-zA-Z]*')]],
-    email:['',[Validators.required,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
+    email:['',[Validators.required]],
     dob:['',[Validators.required]],
     mno:['',[Validators.required,Validators.pattern('[0-9]*'),Validators.minLength(10)]],
     pswd:['',[Validators.required]]

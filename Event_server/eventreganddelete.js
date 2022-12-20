@@ -62,7 +62,6 @@ const history = (id) => {
     return mongoDb.Event.findOne({ "_id": id })
         .then(result => {
             if (result) {
-                console.log(result)
                 const newHistory = new mongoDb.Eventhistory({
                     "User_Code": result.User_Code,
                     "Deleted_Event": result.Event_Name,
